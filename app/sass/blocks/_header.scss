@@ -1,0 +1,68 @@
+.header {
+  padding: 167px 50px 143px;
+  text-align: center;
+
+  &__title {
+    margin: 0 0 18px;
+  }
+
+  &__text {
+    margin: 0 0 52px;
+  }
+
+  &__link {
+    font-weight: 700;
+    color: $orange;
+  }
+
+  &__btn {
+    display: inline-block;
+    position: relative;
+    margin-left: 30px;
+    padding: 18px 25px 17px 46px;
+    font-family: $gilroy;
+    font-weight: 800;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    border-radius: 27px;
+    color: $charcoal;
+    overflow: hidden;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      width: 54px;
+      height: 54px;
+      border-radius: 27px;
+      background-color: transparentize(#878787, 0.95);
+      transition: 0.5s;
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: "";
+      width: 54px;
+      height: 54px;
+      border-radius: 27px;
+      background-image: url("../img/plus.svg");
+      background-repeat: no-repeat;
+      background-position: 20px center;
+    }
+
+    &:hover {
+
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+
+
+
+
+}

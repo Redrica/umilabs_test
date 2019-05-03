@@ -1,0 +1,77 @@
+.features {
+  padding: 120px 135px 148px;
+
+  @media (max-width: 1439px) {
+    padding: 120px 65px 148px;;
+  }
+
+  &__title {
+    margin: 0 0 63px;
+    text-align: center;
+  }
+
+  &__list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @media (max-width: 1439px) {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+    padding-top: 84px;
+    background-image: url("../../img/icon_wallet.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+
+    &:nth-child(1) {
+      width: 326px;
+      margin-right: 71px;
+
+      @media (max-width: 1439px) {
+        width: calc((100% / 3) - 30px);
+        margin: 0;
+      }
+    }
+
+    &:nth-child(2) {
+      width: 332px;
+      margin-right: 65px;
+
+      @media (max-width: 1439px) {
+        width: calc((100% / 3) - 30px);
+        margin: 0;
+      }
+    }
+
+    &:nth-child(3) {
+      width: 345px;
+
+      @media (max-width: 1439px) {
+        width: calc((100% / 3) - 30px);
+      }
+    }
+  }
+
+  &__item-title {
+    display: block;
+    position: relative;
+    margin-bottom: 50px;
+    font-size: 20px;
+    color: $black;
+
+    &::before {
+      position: absolute;
+      bottom: -26px;
+      left: 0;
+      content: "";
+      width: 24px;
+      height: 2px;
+      background-color: $orange;
+    }
+  }
+}

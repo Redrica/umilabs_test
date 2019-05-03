@@ -1,0 +1,55 @@
+.about {
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 972px;
+    margin: 0 auto 80px;
+    padding: 0;
+    list-style: none;
+    background-color: $white;
+    box-shadow: 0 4px 4px 0 transparentize($black, 0.75);
+
+    @media (max-width: 1023px) {
+      width: calc(100% - 40px);
+    }
+  }
+
+  &__list-item {
+    width: 50%;
+    padding: 50px 75px 60px 59px;
+    border: 1px solid $light-gray;
+  }
+
+  &__item-title {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: $orange;
+  }
+
+  &__item-text {
+    margin: 17px 0 0;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: -0.03em;
+    color: $charcoal;
+  }
+
+  &__info {
+    padding: 82px 0 74px;
+    background-color: $white;
+  }
+
+  &__title {
+    max-width: 773px;
+    margin: 0 auto 24px;
+  }
+
+  &__text {
+    max-width: 773px;
+    margin: 0 auto 30px;
+  }
+}

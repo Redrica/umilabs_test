@@ -1,5 +1,14 @@
-@import "_normalize.scss",
+@import "_normalize",
         "_variables",
         //"_mixins.scss",
         "_fonts",
-        "_main.scss";
+        "_common",
+        "blocks/_main",
+        "blocks/_text",
+        "blocks/_header",
+        "blocks/_about",
+        "blocks/_features",
+        "blocks/_write",
+        "blocks/_input-field",
+        "blocks/_container",
+        "blocks/_btn";

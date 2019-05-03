@@ -1,0 +1,17 @@
+.main {
+  padding-top: 501px;
+  background-color: $light-gray;
+  background-image: url("../../img/main_back.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  @media (max-width: 1439px) {
+    padding-top: 35vw;
+  }
+
+  &__features {
+    width: 1140px;
+    margin: 0 auto;
+  }
+
+}
