@@ -625,7 +625,7 @@ input[type="file"].visually-hidden {
   border: 1px solid #f7f5fa; }
   @media (max-width: 1023px) {
     .about__list-item {
-      padding: 30px; } }
+      padding: 45px; } }
   @media (max-width: 599px) {
     .about__list-item {
       width: calc(100% + 40px);

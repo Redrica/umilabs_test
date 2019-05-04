@@ -1,7 +1,7 @@
 var gulp = require('gulp'),
-    sass = require('gulp-sass'), //Подключаем Sass пакет
-    browserSync = require('browser-sync').create(), // Подключаем Browser Sync
-    pug = require('gulp-pug'), // Подключаем Pug
+    sass = require('gulp-sass'),
+    browserSync = require('browser-sync').create(),
+    pug = require('gulp-pug'),
     plumber = require("gulp-plumber"),
     postcss = require("gulp-postcss"),
     autoprefixer = require("autoprefixer"),
@@ -14,7 +14,7 @@ var gulp = require('gulp'),
 
 gulp.task('pug', function buildHTML() {
     return gulp.src('app/pug/*.pug')
-        .pipe(plumber()) // обработка ошибок без прерывания процесса
+        .pipe(plumber())
         .pipe(pug({
             pretty: true
         }))
@@ -24,8 +24,8 @@ gulp.task('pug', function buildHTML() {
         }))
 });
 
-gulp.task('sass', function(){ // Создаем таск Sass
-    return gulp.src('app/sass/**/*.scss') // Берем все scss файлы из папки sass и дочерних, если таковые будут
+gulp.task('sass', function(){
+    return gulp.src('app/sass/**/*.scss')
         .pipe(plumber(
             {
             errorHandler: function (err) {
@@ -34,17 +34,17 @@ gulp.task('sass', function(){ // Создаем таск Sass
             }
         }
         ))
-        .pipe(sass({errLogToConsole: true})) // Преобразуем Sass в CSS посредством gulp-sass
-        .pipe(postcss([ autoprefixer() ])) // префиксы, список браузеров в package.json
-        .pipe(gulp.dest('docs/css')) // Выгружаем результат в папку app/css
-        .pipe(minify()) // минифицируем
+        .pipe(sass({errLogToConsole: true}))
+        .pipe(postcss([ autoprefixer() ]))
+        .pipe(gulp.dest('docs/css'))
+        .pipe(minify())
         .pipe(rename({
             suffix: '.min'
-        })) // добавляем суффикс .min
-        .pipe(gulp.dest('docs/css')) // кладем туда же минифицированный файл
+        }))
+        .pipe(gulp.dest('docs/css'))
         .pipe(browserSync.reload({
             stream: true
-        })) // Обновляем CSS на странице при изменении
+        }))
 });
 
 gulp.task("jscript", function () {
@@ -68,9 +68,6 @@ gulp.task('copy', function () {
         base: 'app'
     })
         .pipe(gulp.dest('docs'))
-        // .pipe(browserSync.reload({
-        //     stream: true
-        // }))
 });
 
 gulp.task('images', function () {
@@ -89,21 +86,19 @@ gulp.task('images', function () {
        .pipe(gulp.dest('docs/img'))
 });
 
-gulp.task('browser-sync', function() { // Создаем таск browser-sync
-    browserSync.init({ // Выполняем browser Sync
-        server: { // Определяем параметры сервера
-            baseDir: 'docs' // Директория для сервера - app
+gulp.task('browser-sync', function() {
+    browserSync.init({
+        server: {
+            baseDir: 'docs'
         },
-        notify: false // Отключаем уведомления
+        notify: false
     });
 });
 
 gulp.task('watch', ['browser-sync'], function() {
-    gulp.watch('app/sass/**/*.scss', ['sass']); // Наблюдение за sass файлами
-    gulp.watch('app/pug/*.pug', ['pug']); // Наблюдение за Pug файлами
-    gulp.watch('app/js/*.js', ['jscript']); // Наблюдение за главным JS файлом и за библиотеками
-
-    // Наблюдение за другими типами файлов
+    gulp.watch('app/sass/**/*.scss', ['sass']);
+    gulp.watch('app/pug/*.pug', ['pug']);
+    gulp.watch('app/js/*.js', ['jscript']);
 });
 
 gulp.task('develop', function (fn) {
@@ -117,77 +112,3 @@ gulp.task('develop', function (fn) {
        fn
    ) ;
 });
-
-// gulp.task('watch', ['pug', 'sass', 'browser-sync'], function() {
-//     gulp.watch('app/sass/**/*.scss', ['sass']); // Наблюдение за sass файлами
-//     gulp.watch('app/*.html', browserSync.reload); // автоперезагрузка html
-//     gulp.watch('app/pug/**/*.pug', ['pug'], browserSync.reload); // автоперезагрузка pug
-// });
-
-// gulp.task('mytask', function() {
-//     console.log('Привет, я таск!');
-// });
-
-
-// function defaultTask(cb) {
-//     console.log('place code for your default task here');
-//     cb();
-// }
-//
-// function styleTask(cb) {
-//     console.log('one more string');
-//     cb();
-// }
-// exports.default = defaultTask;
-// exports.style = styleTask;
-
-
-
-
-
-
-
-
-
-
-////////////////////////////// это работает
-// const gulp = require('gulp'),
-//     pug = require('gulp-pug'),
-//     browserSync = require('browser-sync'),
-//     sass = require('gulp-sass'); //Подключаем Sass пакет
-//
-//
-// const reload = browserSync.reload;
-//
-// gulp.task('pug', function() {
-//     gulp.src('app/pug/**/*.pug')
-//         .pipe(pug({ pretty: true }))
-//         .pipe(gulp.dest('app'))
-//         .pipe(reload({ stream: true }))
-// });
-//
-// gulp.task('sass', function(){ // Создаем таск Sass
-//     return gulp.src('app/sass/**/*.scss') // Берем все scss файлы из папки sass и дочерних, если таковые будут
-//         .pipe(sass()) // Преобразуем Sass в CSS посредством gulp-sass
-//         .pipe(gulp.dest('app/css')) // Выгружаем результат в папку app/css
-//         .pipe(browserSync.reload({stream: true})) // Обновляем CSS на странице при изменении
-// });
-//
-//
-// gulp.task('watcher', function () {
-//     // gulp.watch('app/pug/**/*.pug', ['pug']);
-//     gulp.watch('app/pug/**/*.pug', function () {
-//         gulp.start('pug');
-//     });
-//     gulp.watch('app/sass/**/*.scss', ['sass']);
-// });
-//
-// gulp.task('browser-sync', function() {
-//     browserSync.init({
-//         server: {
-//             baseDir: 'app/'
-//         }
-//     })
-// });
-//
-// gulp.task('default', ['watcher', 'browser-sync', 'pug', 'sass']);
