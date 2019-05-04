@@ -25,14 +25,14 @@ gulp.task('pug', function buildHTML() {
 });
 
 gulp.task('sass', function(){
-    return gulp.src('app/sass/**/*.scss')
+    gulp.src('app/sass/**/*.scss')
         .pipe(plumber(
-            {
-            errorHandler: function (err) {
-                console.log(err);
-                this.emit('end');
-            }
-        }
+        //     {
+        //     errorHandler: function (err) {
+        //         console.log(err);
+        //         this.emit('end');
+        //     }
+        // }
         ))
         .pipe(sass({errLogToConsole: true}))
         .pipe(postcss([ autoprefixer() ]))
