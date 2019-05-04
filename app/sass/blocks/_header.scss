@@ -46,6 +46,8 @@
     border-radius: 27px;
     color: $charcoal;
     overflow: hidden;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
 
     @include tablet {
       margin-left: 15px;

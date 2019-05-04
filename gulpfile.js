@@ -63,7 +63,8 @@ gulp.task('clean', function () {
 
 gulp.task('copy', function () {
     return gulp.src([
-        'app/fonts/**/*.{woff,woff2}'
+        'app/fonts/**/*.{woff,woff2}',
+        'app/libs/**/*.js'
     ], {
         base: 'app'
     })

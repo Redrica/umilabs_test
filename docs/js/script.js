@@ -64,6 +64,7 @@
         inputs[i].addEventListener('blur', onBlurCheckField);
     }
 
+    /* обработчик отправки формы */
     form.addEventListener('submit', function (evt) {
 
         if (!userName.value || !userName.value.match(regExps.regName)) {
@@ -80,4 +81,10 @@
             createErrorMessage(userPhone);
         }
     });
+
+    /* анимация */
+
+    var wow = new WOW({mobile: false});
+    wow.init();
+
 })();

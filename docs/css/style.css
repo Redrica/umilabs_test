@@ -564,7 +564,11 @@ input[type="file"].visually-hidden {
     text-transform: uppercase;
     border-radius: 27px;
     color: #222222;
-    overflow: hidden; }
+    overflow: hidden;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite; }
     @media (max-width: 1023px) {
       .header__btn {
         margin-left: 15px; } }
