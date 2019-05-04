@@ -2,7 +2,7 @@ doctype html
 html(lang='ru')
     head
         meta(charset='utf-8')
-        meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge')
         meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
 
         link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css")
@@ -60,15 +60,15 @@ html(lang='ru')
                 form(action="http://httpbin.org/post", method="post").write__form
                     .write__form-input.input-field.wow.fadeIn(data-wow-duration="1s", data-wow-offset="50")
                         label(for="name").input-field__label Фамилия и имя
-                        input(type="text", placeholder="Сидоров Александр", id="name", name="name", required="true").input-field__input
+                        input(type="text", placeholder="Сидоров Александр", id="name", name="name", required).input-field__input
                         .input-field__focus
                     .write__form-input.input-field.wow.fadeIn(data-wow-duration="1s", data-wow-offset="50")
                         label(for="email").input-field__label Электронная почта
-                        input(type="email", placeholder="Sidorov@yandex.ru", id="email", name="email", required="true").input-field__input
+                        input(type="email", placeholder="Sidorov@yandex.ru", id="email", name="email", required).input-field__input
                         .input-field__focus
                     .write__form-input.input-field.wow.fadeIn(data-wow-duration="1s", data-wow-offset="50")
                         label(for="phone").input-field__label Телефон
-                        input(type="text", placeholder="+7 (999)-328-14-20 ", id="phone", name="phone", required="true").input-field__input
+                        input(type="text", placeholder="+7 (999)-328-14-20 ", id="phone", name="phone", required).input-field__input
                         .input-field__focus
                     .write__form-input.input-field.wow.fadeIn(data-wow-duration="1s", data-wow-offset="50")
                         label(for="message").input-field__label Какой деятельностью, не связанной с текущими проектами, вы бы хотели заниматься в рабочее время?
