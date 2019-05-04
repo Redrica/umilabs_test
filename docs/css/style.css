@@ -697,6 +697,7 @@ input[type="file"].visually-hidden {
     margin-top: -6px; }
 
 .input-field {
+  position: relative;
   display: flex;
   flex-direction: column; }
   .input-field__label {
@@ -743,6 +744,8 @@ input[type="file"].visually-hidden {
       outline: none; }
       .input-field__input:focus + .input-field__focus {
         width: 100%; }
+    .input-field__input--error {
+      border-color: #950000; }
   .input-field__focus {
     position: absolute;
     bottom: 0;
@@ -750,6 +753,13 @@ input[type="file"].visually-hidden {
     height: 2px;
     background-color: #f47821;
     transition: 0.5s; }
+  .input-field__error-tip {
+    position: absolute;
+    left: 0;
+    bottom: -30px;
+    margin: 0;
+    font-size: 10px;
+    color: #950000; }
 
 .container {
   width: 100%;

@@ -26,12 +26,14 @@ gulp.task('pug', function buildHTML() {
 
 gulp.task('sass', function(){ // Создаем таск Sass
     return gulp.src('app/sass/**/*.scss') // Берем все scss файлы из папки sass и дочерних, если таковые будут
-        .pipe(plumber({
+        .pipe(plumber(
+            {
             errorHandler: function (err) {
                 console.log(err);
                 this.emit('end');
             }
-        }))
+        }
+        ))
         .pipe(sass({errLogToConsole: true})) // Преобразуем Sass в CSS посредством gulp-sass
         .pipe(postcss([ autoprefixer() ])) // префиксы, список браузеров в package.json
         .pipe(gulp.dest('docs/css')) // Выгружаем результат в папку app/css
