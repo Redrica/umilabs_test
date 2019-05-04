@@ -6,7 +6,12 @@
   background-repeat: no-repeat;
 
   @media (max-width: 1439px) {
-    padding-top: 35vw;
+    padding-top: 30vw;
+  }
+
+  @include mobile {
+    padding-top: 0;
+    background-image: none;
   }
 
   &__features {

@@ -1,13 +1,18 @@
 .features {
   padding: 120px 135px 148px;
 
-  @media (max-width: 1439px) {
-    padding: 120px 65px 148px;;
+  @include tablet {
+    padding: 65px 50px 40px;
+  }
+
+  @include mobile {
+    padding: 45px 30px 35px;
   }
 
   &__title {
     margin: 0 0 63px;
     text-align: center;
+    color: $black;
   }
 
   &__list {
@@ -17,8 +22,12 @@
     list-style: none;
 
     @media (max-width: 1439px) {
-      flex-wrap: wrap;
       justify-content: space-between;
+      margin: 0;
+    }
+
+    @include tablet {
+      flex-wrap: wrap;
     }
   }
 
@@ -28,6 +37,11 @@
     background-repeat: no-repeat;
     background-position: 0 0;
 
+    @include mobile {
+      padding-top: 0;
+      background-size: 50px;
+    }
+
     &:nth-child(1) {
       width: 326px;
       margin-right: 71px;
@@ -35,6 +49,10 @@
       @media (max-width: 1439px) {
         width: calc((100% / 3) - 30px);
         margin: 0;
+      }
+
+      @include wide-mobile {
+        width: 100%;
       }
     }
 
@@ -46,6 +64,10 @@
         width: calc((100% / 3) - 30px);
         margin: 0;
       }
+
+      @include wide-mobile {
+        width: 100%;
+      }
     }
 
     &:nth-child(3) {
@@ -53,6 +75,17 @@
 
       @media (max-width: 1439px) {
         width: calc((100% / 3) - 30px);
+      }
+
+      @include wide-mobile {
+        width: 100%;
+      }
+    }
+
+    &:not(:last-child) {
+
+      @include tablet {
+        margin-bottom: 35px;
       }
     }
   }
@@ -64,6 +97,10 @@
     font-size: 20px;
     color: $black;
 
+    @include mobile {
+      padding-left: 90px;
+    }
+
     &::before {
       position: absolute;
       bottom: -26px;
@@ -72,6 +109,10 @@
       width: 24px;
       height: 2px;
       background-color: $orange;
+
+      @include mobile {
+        left: 90px;
+      }
     }
   }
 }

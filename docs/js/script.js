@@ -24,18 +24,18 @@
             errorTip.classList.add('input-field__error-tip');
             errorTip.textContent = 'Поле ' + elem.id + ' не заполнено, либо содержит недопустимые символы';
 
-            elem.addEventListener('focus', removeErrorTip);
+            elem.addEventListener('input', onInputRemoveErrorTip);
         }
     }
 
     /* обработчик фокуса на поле, удаление сообщения об ошибке (при его наличии) */
-    function removeErrorTip(evt) {
+    function onInputRemoveErrorTip(evt) {
         var errorExists = evt.target.parentElement.querySelector('.input-field__error-tip');
 
         if (errorExists) {
             evt.target.parentElement.removeChild(errorExists);
         }
-        this.removeEventListener('input', removeErrorTip);
+        this.removeEventListener('input', onInputRemoveErrorTip);
     }
 
     /* обработчик ухода фокуса с поля, проверка заполнения */

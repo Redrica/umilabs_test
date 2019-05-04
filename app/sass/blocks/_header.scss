@@ -1,13 +1,31 @@
 .header {
-  padding: 167px 50px 143px;
+  padding: 167px 50px 123px;
   text-align: center;
+
+  @include tablet {
+    padding: 90px 50px 60px;
+  }
+
+  @include mobile {
+    padding: 70px 0 35px;
+  }
 
   &__title {
     margin: 0 0 18px;
+
+    @include mobile {
+      margin: 0 auto 18px;
+      width: 75%;
+    }
   }
 
   &__text {
-    margin: 0 0 52px;
+    margin: 0 0 35px;
+
+    @include mobile {
+      margin: 0 auto 30px;
+      width: 75%;
+    }
   }
 
   &__link {
@@ -28,6 +46,10 @@
     border-radius: 27px;
     color: $charcoal;
     overflow: hidden;
+
+    @include tablet {
+      margin-left: 15px;
+    }
 
     &::before {
       position: absolute;

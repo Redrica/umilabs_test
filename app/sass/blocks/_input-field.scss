@@ -3,23 +3,54 @@
   display: flex;
   flex-direction: column;
 
+  &::before {
+    position: absolute;
+    top: -19px;
+    left: -92px;
+    content: counter(number);
+    counter-increment: number;
+    width: 64px;
+    height: 64px;
+    font-family: $roboto;
+    font-size: 20px;
+    line-height: 62px;
+    font-weight: 500;
+    text-align: center;
+    border: 1px solid transparentize($white, 0.77);
+    border-radius: 50%;
+    color: $orange;
+
+    @include mobile {
+      top: -7px;
+      left: 0;
+      width: 45px;
+      height: 45px;
+      line-height: 43px;
+    }
+  }
+
   &__label {
-    margin-bottom: 24px;
+    margin-bottom: 21px;
     font-size: 16px;
     line-height: 25px;
     font-weight: 700;
     letter-spacing: -0.01em;
     color: $white;
+
+    @include mobile {
+      padding-left: 65px;
+    }
   }
 
   &__input {
-    padding: 0 0 16px;
+    padding: 0 0 13px;
     font-family: $roboto;
     font-size: 24px;
     font-weight: 400;
     line-height: 1.45em;
     letter-spacing: -0.01em;
     color: transparentize($white, 0.7);
+    border-radius: 0;
     border: none;
     border-bottom: 2px solid transparentize($stroke, 0.9);
     background-color: transparent;
@@ -28,6 +59,13 @@
     resize: none;
     transition: 0.5s;
     overflow: auto;
+
+    @include mobile {
+      padding-left: 65px;
+      padding-bottom: 5px;
+      font-size: 18px;
+      line-height: 1.2em;
+    }
 
     &::-webkit-input-placeholder {
       color: transparentize($white, 0.7);
@@ -61,8 +99,9 @@
       }
     }
 
-    &--error {
-      border-color: $error;
+    &:-webkit-autofill {
+      -webkit-box-shadow: inset 0 0 0 50px $black-back;
+      -webkit-text-fill-color: transparentize($white, 0.7);
     }
   }
 
@@ -84,3 +123,8 @@
     color: $error;
   }
 }
+textarea.input-field__input {
+  padding-top: 4px;
+  padding-bottom: 16px;
+}
+

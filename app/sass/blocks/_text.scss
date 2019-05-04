@@ -5,17 +5,29 @@
     font-size: 48px;
     letter-spacing: -0.02em;
     color: $charcoal;
+
+    @include mobile {
+      font-size: 32px;
+    }
   }
 
   &--med {
     font-size: 40px;
     letter-spacing: -0.02em;
+
+    @include mobile {
+      font-size: 28px;
+    }
   }
 
   &--xs {
     font-family: $roboto;
     font-size: 16px;
     line-height: 1.64em;
+
+    @include mobile {
+      font-size: 14px;
+    }
   }
 
   &--white {
