@@ -489,7 +489,7 @@ input[type="file"].visually-hidden {
 .main {
   padding-top: 501px;
   background-color: #f7f5fa;
-  background-image: url("../../img/main_back.jpg");
+  background-image: url("../img/main_back.jpg");
   background-size: contain;
   background-repeat: no-repeat; }
   @media (max-width: 1439px) {
@@ -617,7 +617,7 @@ input[type="file"].visually-hidden {
       padding: 40px 0;
       background-color: transparent;
       box-shadow: none;
-      background-image: url("../../img/main_back.jpg");
+      background-image: url("../img/main_back.jpg");
       background-repeat: no-repeat;
       background-size: auto 100%;
       background-position-x: center;
@@ -715,7 +715,7 @@ input[type="file"].visually-hidden {
         flex-wrap: wrap; } }
   .features__item {
     padding-top: 84px;
-    background-image: url("../../img/icon_wallet.svg");
+    background-image: url("../img/icon_wallet.svg");
     background-repeat: no-repeat;
     background-position: 0 0; }
     @media (max-width: 599px) {
